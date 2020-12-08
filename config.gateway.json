@@ -1,0 +1,39 @@
+{
+        "interfaces": {
+                "ethernet": {
+                        "eth1": {
+                                "ip": {
+                                        "ospf": {
+                                                "dead-interval": "40",
+                                                "hello-interval": "10",
+                                                "network": "broadcast",
+                                                "priority": "1",
+                                                "retransmit-interval": "5",
+                                                "transmit-delay": "1"
+                                        }
+                                }
+                        }
+                }
+        },
+        "protocols": {
+                "ospf": {
+                        "area": {
+                                "666": {
+                                        "network": [
+                                                "10.203.0.0/24"
+                                        ]
+                                }
+                        },
+                        "parameters": {
+                                "abr-type": "cisco",
+                                "router-id": "192.168.15.1"
+                        },
+                        "passive-interface": [
+                                "default"
+                        ],
+                        "passive-interface-exclude": [
+                                "eth1.103"
+                        ]
+                }
+        }
+}
